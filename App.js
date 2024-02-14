@@ -90,6 +90,10 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     borderColor: 'navy',
     borderWidth: 1,
+    shadowColor: '#171717',
+    shadowOffset: {width: 5, height: 5},
+    shadowOpacity: 0.2,
+    shadowRadius: 3, 
   },
 
   button: {
@@ -98,6 +102,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     borderRadius: 10,
     marginBottom: 40,
+    shadowColor: '#171717',
+    shadowOffset: {width: 5, height: 5},
+    shadowOpacity: 0.2,
+    shadowRadius: 3, 
   },
 
   buttonText: {
