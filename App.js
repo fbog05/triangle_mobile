@@ -19,32 +19,35 @@ export default function App() {
 
       <Text style={styles.cim}>Háromszög</Text>
 
-      <Text style={styles.szoveg}>Alap</Text>
-      <TextInput 
-        style={styles.mezo}
-        onChangeText={text => setBase(text)}
-      />
+      <View style={styles.body}>
+        <Text style={styles.szoveg}>Alap</Text>
+        <TextInput
+          style={styles.mezo}
+          onChangeText={text => setBase(text)}
+        />
+        <Text style={styles.szoveg}>Magasság</Text>
+        <TextInput
+          style={styles.mezo}
+          onChangeText={text => setHeight(text)}
+        />
+        <Pressable
+          onPress={calcArea}
+          style={styles.button}
+        >
+          <Text style={styles.buttonText}>
+            SZÁMÍT
+          </Text>
+        </Pressable>
+        <Text style={styles.szoveg}>Terület</Text>
+        <TextInput
+          style={styles.mezo}
+          value = {area}
+        />
+      </View>
 
-      <Text style={styles.szoveg}>Magasság</Text>
-      <TextInput 
-        style={styles.mezo}
-        onChangeText={text => setHeight(text)}
-      />
-
-      <Pressable
-        onPress={calcArea}
-        style={styles.button}
-      >
-        <Text style={styles.buttonText}>
-          SZÁMÍT
-        </Text>
-      </Pressable>
-
-      <Text style={styles.szoveg}>Terület</Text>
-      <TextInput 
-        style={styles.mezo}
-        value = {area}
-      />
+      <View style={styles.footer}>
+        <Text style={styles.footerText}>Ferencsik Boglárka, 2024</Text>
+      </View>
 
     </View>
   );
@@ -62,7 +65,13 @@ const styles = StyleSheet.create({
     color: 'navy',
     fontWeight: 800,
     fontSize: 25,
-    paddingBottom: 25,
+    marginTop: 20,
+  },
+
+  body: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 
   szoveg:{
@@ -79,6 +88,8 @@ const styles = StyleSheet.create({
     color: 'navy',
     fontWeight: 600,
     marginBottom: 20,
+    borderColor: 'navy',
+    borderWidth: 1,
   },
 
   button: {
@@ -86,12 +97,24 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 10,
-    marginBottom: 25,
+    marginBottom: 40,
   },
 
   buttonText: {
     color: 'white',
     fontSize: 14,
     fontWeight: 700,
+  },
+
+  footer: {
+    backgroundColor: 'navy',
+    width: '100%',
+    opacity: '80%',
+    padding: 5
+  },
+
+  footerText: {
+    color: 'white',
+    textAlign: 'center'
   },
 });
